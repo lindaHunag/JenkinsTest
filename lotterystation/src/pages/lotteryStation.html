@@ -1,0 +1,31 @@
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="mapTest.css" />
+    <script src="mapTest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApEA9EftcZTKkjUacMSeOKAkNTrhHcgH4&callback=initMap&v=weekly"
+        async></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--指示瀏覽器如何控制網頁大小和縮放-->
+</head>
+
+<body id="lotteryStation">
+    <div class="title">
+        附近投注站
+        <div class="mode" id="mode" onclick="changeMode(this)"></div>
+    </div>
+    <div class="selectDist" id="selectDist">
+        <button id = "dist" class="dist" value="1">1公里</button>
+        <div class="selectDist-content">
+            <div value="2" onclick="changeDistance(this)">2公里</div>
+            <div value="5" onclick="changeDistance(this)">5公里</div>
+        </div>
+    </div>
+    <!--輪播-->
+    <div id="lotteryInfoAll" class="lotteryInfoAll">
+    </div>
+    <!--地圖-->
+    <div id="map"></div>
+</body>
